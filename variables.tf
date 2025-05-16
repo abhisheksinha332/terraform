@@ -4,10 +4,10 @@ variable "storage_account_name" {
   
 }
 
-variable "blob_name" {
-  description = "The name of the blob"
-  type        = list(string)
-}
+# variable "blob_name" {
+#   description = "The name of the blob"
+#   type        = list(string)
+# }
 
 variable "create_resource" {
   description = "Flag to create resources"
