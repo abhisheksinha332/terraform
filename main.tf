@@ -8,11 +8,6 @@ terraform {
   }
 
   backend "azurerm" {
-  resource_group_name  = "azure-vm"
-  access_key = var.access_Key
-  storage_account_name = "azurevm8b17"
-  container_name       = "app-container"
-  key                  = "terraform.tfstate"
 }
 }
 
