@@ -52,6 +52,16 @@ resource "azurerm_storage_container" "app_container" {
   depends_on = [ azurerm_storage_account.app_storage ]
 }
 
+resource "azurerm_storage_blob" "app_blob" {
+  for_each = toset(var.blob_name)
+  
+  name                   = each.key
+  storage_account_name   = azurerm_storage_account.app_storage.name
+  storage_container_name = azurerm_storage_container.app_container.name
+  type                   = "Block"
+  source                 = "D:/${each.key}"  # (Optional: Can be different per blob if you want later)
+  depends_on             = [azurerm_storage_container.app_container]
+}
 
 
 resource "azurerm_service_plan" "app_service_plan" {
