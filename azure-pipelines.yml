@@ -1,0 +1,35 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+
+# Package PowerShell Scripts as Artifact
+- task: PowerShell@2
+  displayName: 'Validate PowerShell Scripts'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Output "Packaging PowerShell scripts for drop"
+      if (Test-Path '$(Build.SourcesDirectory)') {
+        Write-Output "PowerShell scripts directory found!"
+      } else {
+        Write-Error "PowerShell scripts directory not found!"
+      }
+
+# Publish Artifact
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish PowerShellScripts Artifact'
+  inputs:
+    targetPath: '$(Build.SourcesDirectory)'
+    artifact: 'PowerShellScripts'

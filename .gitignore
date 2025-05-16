@@ -1,0 +1,14 @@
+**/.terraform/*
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+*.tfplan
+dev.tfvars
+
+*.log
+*.pem
+*.key
+*.pfx
+*.crt
+*.env
