@@ -39,8 +39,3 @@ variable "subscription_id" {
   description = "Subscription ID for the service principal"
   type        = string  
 }
-
-variable "access_Key" {
-  description = "Access key for the storage account"
-  type        = string  
-}
