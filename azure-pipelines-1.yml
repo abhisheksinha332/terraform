@@ -11,6 +11,9 @@ pool:
 
 steps:
 - script: ls -R $(System.DefaultWorkingDirectory)
+- script: $(ARM_CLIENT_ID)
   displayName: 'Run a one-line script'
+
+
 
 
