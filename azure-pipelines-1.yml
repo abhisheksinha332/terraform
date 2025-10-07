@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: ls -R $(System.DefaultWorkingDirectory)
-- script: $(Terraform-SPN.ARM_CLIENT_ID)
+- script: echo $(Terraform-SPN.ARM_CLIENT_ID)
   displayName: 'Run a one-line script'
 
 
