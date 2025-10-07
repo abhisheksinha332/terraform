@@ -18,7 +18,9 @@ steps:
   displayName: 'Run a one-line script'
 
 
-
+- task: TerraformInstaller@2
+  inputs:
+    terraformVersion: 'latest'
 - task: TerraformCLI@2
   inputs:
     command: 'init'
