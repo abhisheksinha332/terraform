@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- group: Terraform-SPN
+
 steps:
 - script: ls -R $(System.DefaultWorkingDirectory)
 - script: echo $(ARM_CLIENT_ID)
