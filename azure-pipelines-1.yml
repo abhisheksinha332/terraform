@@ -24,7 +24,7 @@ steps:
 - task: TerraformCLI@2
   inputs:
     command: 'init'
-    commandOptions: '-var client_id=$(ARM_CLIENT_ID) -var client_secret=$(ARM_CLIENT_SECRET) -var tenant_id=$(ARM_TENANT_ID) -var subscription_id=$(SUBSCRIPTION_ID)'
+    commandOptions: '-var client_id=$(ARM_CLIENT_ID) -var client_secret=$(ARM_CLIENT_SECRET) -var tenant_id=$(ARM_TENANT_ID) -var subscription_id=$(ARM_SUBSCRIPTION_ID)'
     backendType: 'azurerm'
     backendServiceArm: 'Abhishek'
     backendAzureRmTenantId: '$(ARM_TENANT_ID)'
@@ -43,5 +43,5 @@ steps:
     command: 'plan'
     environmentServiceName: 'Abhishek'
     providerAzureRmSubscriptionId: '$(ARM_SUBSCRIPTION_ID)'
-    commandOptions: '-var client_id=$(ARM_CLIENT_ID) -var client_secret=$(ARM_CLIENT_SECRET) -var tenant_id=$(ARM_TENANT_ID) -var subscription_id=$(SUBSCRIPTION_ID)'
+    commandOptions: '-var client_id=$(ARM_CLIENT_ID) -var client_secret=$(ARM_CLIENT_SECRET) -var tenant_id=$(ARM_TENANT_ID) -var subscription_id=$(ARM_SUBSCRIPTION_ID)'
     allowTelemetryCollection: true
