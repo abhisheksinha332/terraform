@@ -19,4 +19,20 @@ steps:
 
 
 
+- task: TerraformCLI@2
+  inputs:
+    command: 'init'
+    commandOptions: '-var client_id=$(ARM_CLIENT_ID) -var client_secret=$(ARM_CLIENT_SECRET) -var tenant_id=$(ARM_TENANT_ID) -var subscription_id=$(SUBSCRIPTION_ID)'
+    backendType: 'azurerm'
+    backendServiceArm: 'Abhishek'
+    backendAzureRmTenantId: '$(ARM_TENANT_ID)'
+    backendAzureRmSubscriptionId: '$(ARM_SUBSCRIPTION_ID)'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'abhi-rg'
+    backendAzureRmResourceGroupLocation: 'Southeast Asia'
+    backendAzureRmStorageAccountName: 'terraformstatefile3327za'
+    backendAzureRmContainerName: 'terraformstatefile3327zacontainer'
+    backendAzureRmKey: 'devplan.tfstate'
+    allowTelemetryCollection: true
+
 
